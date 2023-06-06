@@ -120,29 +120,34 @@ class QuickSort {
     }
   }
 
+ 
+  const estimatePrice = (POPrice, markup) => {
+    return Math.floor(POPrice * (1 + markup))
+  }
+
+
   export default function sortTree(option, orderBy) {
     const bst = new BinarySearchTree(option, orderBy);
+    const markup = 0.12;
 
-    bst.insert(1, "Pensil", "CV. Alat Tulis Indonesia", 2000, 3000);
-    bst.insert(2, "Penghapus", "PT. Stationery Utama", 1500, 2000);
-    bst.insert(3, "Pensil Warna", "CV. Pelangi Kreatif", 5000, 7000);
-    bst.insert(4, "Penggaris", "PT. Alat Ukur Presisi", 3000, 4000);
-    bst.insert(5, "Buku Catatan", "CV. Bina Grafika", 4000, 6000);
-    bst.insert(6, "Stapler", "PT. Mesin Jepit Prima", 8000, 10000);
-    bst.insert(7, "Amplop", "CV. Surat Menyurat Sejahtera", 3000, 4000);
-    bst.insert(8, "Spidol", "PT. Warna Ceria", 5000, 7000);
-    bst.insert(9, "Kuas Cat", "CV. Seni Rupa Makmur", 6000, 8000);
-    bst.insert(10, "Pisau Cutter", "PT. Alat Potong Terampil", 4000, 5500);
-    bst.insert(11, "Buku Agenda", "CV. Agendaku", 6000, 8000);
-    bst.insert(12, "Tipe-X", "PT. Kertas Ketik Kilat", 2000, 3000);
-    bst.insert(13, "Pita Perekat", "CV. Lembut Rapi", 2500, 3500);
-    bst.insert(14, "Kertas HVS", "PT. Kertas Putih Bersih", 7000, 9000);
-    bst.insert(15, "Kalkulator", "CV. Matematika Maju", 10000, 15000);
-    bst.insert(16, "Kertas Foto", "PT. Fotografi Berkualitas", 8000, 10000);
-    bst.insert(17, "Papan Tulis", "CV. Kreatif Kreasi", 15000, 20000);
-    bst.insert(18, "Pensil Mekanik", "PT. Alat Tulis Canggih", 5000, 7000);
-    bst.insert(19, "Tempat Pensil", "CV. Rapi dan Tertata", 3000, 4000);
-    bst.insert(20, "Kuas Lukis", "PT. Seni Visual Nusantara", 7000, 9000);
+    bst.insert(1, "Pensil", "CV. Alat Tulis Indonesia", 2000, estimatePrice(2000, markup));
+    bst.insert(2, "Penghapus", "PT. Stationery Utama", 1500, estimatePrice(1500, markup));
+    bst.insert(3, "Pensil Warna", "CV. Pelangi Kreatif", 5000, estimatePrice(5000, markup));
+    bst.insert(4, "Penggaris", "PT. Alat Ukur Presisi", 3000, estimatePrice(3000, markup));
+    bst.insert(5, "Buku Catatan", "CV. Bina Grafika", 4000, estimatePrice(4000, markup));
+    bst.insert(6, "Stapler", "PT. Mesin Jepit Prima", 8000, estimatePrice(8000, markup));
+    bst.insert(7, "Amplop", "CV. Surat Menyurat Sejahtera", 3000, estimatePrice(3000, markup));
+    bst.insert(8, "Spidol", "PT. Warna Ceria", 5000, estimatePrice(5000, markup));
+    bst.insert(9, "Kuas Cat", "CV. Seni Rupa Makmur", 6000, estimatePrice(6000, markup));
+    bst.insert(10, "Pisau Cutter", "PT. Alat Potong Terampil", 4000, estimatePrice(4000, markup));
+    bst.insert(11, "Buku Agenda", "CV. Agendaku", 6000, estimatePrice(6000, markup));
+    bst.insert(12, "Tipe-X", "PT. Kertas Ketik Kilat", 2000, estimatePrice(2000, markup));
+    bst.insert(13, "Pita Perekat", "CV. Lembut Rapi", 2500, estimatePrice(2500, markup));
+    bst.insert(14, "Kertas HVS", "PT. Kertas Putih Bersih", 7000, estimatePrice(7000, markup));
+    bst.insert(15, "Kalkulator", "CV. Matematika Maju", 10000, estimatePrice(10000, markup));
+    bst.insert(16, "Kertas Foto", "PT. Fotografi Berkualitas", 8000, estimatePrice(8000, markup));
+    bst.insert(17, "Papan Tulis", "CV. Kreatif Kreasi", 15000, estimatePrice(15000, markup));
+ 
     
 
     return bst.getSortedArray();
