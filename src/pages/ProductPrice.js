@@ -9,14 +9,14 @@ function ProductPrice() {
   const orderRef = useRef();
 
   const [filteredBy, setFilteredBy] = useState("id");
-  const [filterOrder, setFilterOrder] = useState(null);
+  const [filterOrder, setFilterOrder] = useState("asc");
 
-  const [products, setProducts] = useState(sorting(filteredBy));
+  const [products, setProducts] = useState(sorting(filteredBy, filterOrder));
 
   const handleFilterBtnClicked = () => {
     setFilteredBy(optionRef.current.value);
     setFilterOrder(orderRef.current.value);
-    setProducts(sorting(filteredBy));
+    setProducts(sorting(filteredBy, filterOrder));
 
   }
 
@@ -30,10 +30,10 @@ function ProductPrice() {
             <option value="harga_jual">Harga Jual</option>
           </select>
           <select ref={orderRef} style={{ marginRight: '1rem' }} class="form-select" aria-label="Default select example">
-            <option value="ascending">Terendah</option>
-            <option value="descenting">Tertinggi</option>
+            <option value="asc">Terendah</option>
+            <option value="desc">Tertinggi</option>
           </select>
-          <button type="button" onClick={handleFilterBtnClicked} class="btn btn-primary">Kirim</button>
+          <button onClick={handleFilterBtnClicked} class="btn btn-primary">Kirim</button>
         </div>
 
         <table class="table table-striped" >
