@@ -5,9 +5,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import sorting from '../utils/ProductData';
 import searchString from '../utils/kmpAlgorithm';
 
-import TableExport from 'tableexport';
-import 'tableexport/dist/css/tableexport.min.css';
-
 
 function ProductPrice(props) {
   const {tax, admin, shipCost} = props;
@@ -69,7 +66,7 @@ function ProductPrice(props) {
           </div>
             
 
-          <button style={{ position: 'absolute', left: '0' }} class="btn btn-success" onClick={() => TableExport(document.getElementById('product_table'))}>Convert</button>
+          <button style={{ position: 'absolute', left: '0' }} class="btn btn-success" >Convert</button>
         </div>
 
         <table class="table table-striped" id='product_table' >
